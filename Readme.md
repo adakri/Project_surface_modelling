@@ -47,7 +47,7 @@ Or using the Precompiled SFML librairy for ubuntu. The use of **CmakeLists.txt**
 
 For a more technical reading of the papers and the actual C++ source code, plese refer to the project report [MMIS 3A Surface modelling course : Grenoble-INP ENSIMAG](https://www.overleaf.com/read/qtjhrcfhmjfw). We will content ourself with the video demo below : 
 
-<img src="Results/demo.gif" width="840" height="640" />
+<img src="projet_surf_mod/Results/demo.gif" width="840" height="640" />
 
 :warning: The choppy nature of the footage is due to the gif capturing software, you can try the app for yourself to be sure.
  
