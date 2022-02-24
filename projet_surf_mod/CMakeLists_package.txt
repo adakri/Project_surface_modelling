@@ -1,0 +1,51 @@
+cmake_minimum_required(VERSION 3.0.2)
+
+project(Surf_Modelling)
+
+# options de compilation
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+
+
+# chemin vers les header files
+include_directories(include)
+
+
+set(SOURCES src/main.cpp src/Polygon.cpp src/gui.cpp src/Mesh.cpp src/Edge.cpp src/Triangle.cpp src/Vec2.cpp 
+                src/delaunator_ext.cpp
+                src/gui.cpp src/Viewer.cpp src/Deformation.cpp 
+                src/solver.cpp
+    )
+
+add_executable(exec ${SOURCES})
+
+
+# Detect and add SFML et al.
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
+
+set(EIGEN3_INCLUDE_DIR external_libs/eigen-3.4.0 )
+
+#Eigen is header only, should only be included
+
+
+#Find any version 2.X of SFML
+#See the FindSFML.cmake file for additional details and instructions
+find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
+find_package(TGUI REQUIRED)
+
+if(NOT SFML_FOUND)
+    message(FATAL_ERROR "Could not find SFML")
+endif()
+
+if(NOT TGUI_FOUND)
+    message(FATAL_ERROR "Could not find TGUI")
+endif()
+
+
+target_sources(exec PRIVATE ${SOURCES})
+  
+target_link_libraries(exec PRIVATE
+  sfml-graphics
+  sfml-window
+  sfml-system
+  tgui)

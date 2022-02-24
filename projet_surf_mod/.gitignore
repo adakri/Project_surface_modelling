@@ -1,0 +1,8 @@
+#ignore the build
+build/*
+
+external_libs/*
+
+!external_libs/Readme.md
+
+
