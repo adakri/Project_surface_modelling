@@ -1,5 +1,6 @@
 # Surface modeling project: Laplacian mesh editing - ARAP deformation 
 
+Dakri Abdelmouttaleb, Arthur Vivière
 
 ## Short description
 
